@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "AdminUser";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_Master.cshtml";
+}
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">لیست کاربران مدیر</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <table id="tbladminusers" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>شماره</th>
+                                <th>نام کاربری</th>
+                                <th>کلمه عبور</th>
+
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+@section Scripts{
+
+    <script>
+
+        $(document).ready(function () {
+            var oTable = $('#tbladminusers').dataTable({
+                "bServerSide": true,
+                "sAjaxSource": "/api/AdminUsers/GetlistUsers/",
+                "bProcessing": true,
+                "columns": [
+            { "data": "Id", "bSearchable": false },
+            { "data": "UserName" },
+            { "data": "Password" }
+
+
+                ]
+            });
+        })
+
+
+
+    </script>
+}
+
+
+
+

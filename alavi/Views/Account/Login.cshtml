@@ -1,0 +1,130 @@
+﻿@model alavi.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+
+@*<div class="row">
+    <div class="medium-10 columns">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Log in" class="btn btn-default" />
+                    </div>
+                </div>
+                <p>
+                    @Html.ActionLink("Register", "Register") if you don't have a local account.
+                </p>
+            }
+        </section>
+    </div>
+    <div class="medium-6 columns">
+        <section id="socialLoginForm">
+            @Html.Partial("_ExternalLoginsListPartial", new { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+    </div>
+</div>*@
+
+<div class="row" >
+    <br />
+    <div class="medium-1 columns" style="min-height:220px"></div> 
+    <div class="page medium-14 columns" style="background-color:#fff">
+        <div class="title">
+            <h2>ورود به حساب کاربری</h2>
+        </div><!--/./ Title -->
+        <div class="content">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+               
+                @Html.ValidationSummary(true)
+                
+                
+                     	<div class="row">
+                        <label for="email" class="medium-3 columns control-label"> :نام کاربری </label>
+                        <div class="control-input medium-10 columns" style="margin:10px">
+                            @Html.TextBoxFor(rec => rec.UserName, new { style = "width: 100%; text-align: right; color: #404040; background-color: #f2f2f2; background-image: none; border: 1px solid #d9d9d9; border-radius: 2px; font-size: 13px; font-family: Yekan" })
+                            @Html.ValidationMessageFor(x=>x.UserName)
+                     
+                        </div>
+                        <div class="medium-3 columns"></div>
+                </div>
+
+
+                <div class="row">
+                    <label for="email" class="medium-3 columns control-label">:کلمه عبور </label>
+                    <div class="control-input  medium-10 columns" style="margin:10px">
+                        @Html.PasswordFor(rec => rec.Password, new { style = "width: 100%; text-align: right; color: #404040; background-color: #f2f2f2; background-image: none; border: 1px solid #d9d9d9; border-radius: 2px; font-size: 13px; font-family: Yekan" })
+                        @Html.ValidationMessageFor(x => x.Password)
+                        
+                    </div>
+                    <div class="medium-3 columns"></div>
+                </div>
+
+                <div class="row">
+                    <label for="email" class="control-label medium-3 columns"></label>
+                    <div class="control-input" style="direction: rtl; padding-right: 20px;font-size:13px">
+                        <label class="checkbox-inline">
+                            <input name="data[User][is_remember]" value="1" id="UserIsRemember" type="checkbox"> مرا به خاطر بسپار
+                        </label>
+                    </div>
+                    
+                </div>
+
+                <div class="row">
+                    <label for="email" class="control-label medium-3 columns"></label>
+                    <div class="control-input">
+                        <a href="/tehran/users/forgot_password" style=" padding-right: 20px;font-size:13px" title="رمز عبور خود را فراموش کرده اید؟">رمز عبور خود را فراموش کرده اید؟</a>		 |
+                        <a href="@Url.Action("Register", "Account")" style="font-size:13px" title="عضویت در سایت">عضویت در سایت</a>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="control-label medium-3 columns"></label>
+                    <div class="control-input">
+                        <button type="submit" class="submitsub" style="height:30px;font-size:13px;margin-right:20px;float:right"> وارد شوید</button>
+                    </div>
+                </div>
+                
+                
+            }  
+           
+           
+        </div><!--/./ content -->
+    </div><!--/./ page -->
+    <div class="medium-1 columns" style="min-height:220px"></div> 
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

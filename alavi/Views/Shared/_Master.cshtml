@@ -1,0 +1,215 @@
+﻿@{
+    Layout = null;
+}
+@using alavi.Helper
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="خیریه علوی مشهد | کمک به ایتام و نیازمندان">
+
+    <meta name="description" content="سایت خیریه و کمک به نیازمندان خیره علوی مشهد ، کمک رسانی و پشتیبانی کودکان و خانوادهای نیازمند در طول تحصیل و ازدواج و در تمامی مراحل زندگی .">
+    <meta name="keywords" content="خیریه علوی ,خیریه علوی مشهد,نیازمندان,یتیمان,ازدواج نیازمندان,تحصیل نیازمندان,کمک رسانی,پشتیبانی نیازمندان,خیر خواهانه,یاری رساندن,امام علی علیه السلام,امام رضا علیه السلام,مستمندان,ازدواج یتیمان,تحصیل یتیمان" />
+
+    <!--General-->
+  
+    <meta name="author" content="خیریه علوی مشهد | کمک به ایتام و نیازمندان" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="copyright" content="copyright © 2010-2014 alavimashhad.com" />
+    <meta name="language" content="Fa" />
+    <meta name="document-type" content="Public" />
+    <meta name="distribution" content="global" />
+    <meta name="document-rating" content="General" />
+    <meta name="classification" content="charity" />
+    <meta name="rating" content="charity for children" />
+    <meta name="resource-type" content="document" />
+    <meta name="viewport" content="width=device-width" />
+    @*<meta content="index" name="googlebot" />
+    <meta name="revisit-after" content="7 Days" />
+    <meta name="doc-class" content="Living Document" />
+    <meta name="bitly-verification" content="088754a5ca16" />*@
+
+    @if (CultureHelper.IsRighToLeft())
+    {
+
+        <link href="~/Content/rtl/css/foundation.min.css" rel="stylesheet" />
+    }
+    else
+    {
+
+        <link href="~/Content/ltr/css/foundation.min.css" rel="stylesheet" />
+    }
+  
+
+    <title>.::موسسه خیریه علوی مشهد::.</title>
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+    @System.Web.Optimization.Styles.Render("~/Content/Maincss")
+    @System.Web.Optimization.Scripts.Render("~/bundles/slider")
+
+
+</head>
+<body>
+    <div class="row header">
+        <div class="medium-16 columns topnav">
+        </div>
+        <div class="medium-16 columns" style="height: 38px; background: #262626">
+
+            <div class="medium-13  columns">
+                <ul class="menu">
+                    <li><a>با ما در کمک به ایتام و نیازمندان همراه باشید</a></li>
+                    <li><a href="@Url.Action("Contact")">تماس با ما</a></li>
+                </ul>
+                <div class="pull-right  Topnavcountry">
+
+                    <label>انتخاب زبان</label>
+
+
+                </div>
+                <ul class="pull-right  lang">
+                    <li @(CultureHelper.GetCurrentCulture()=="fa"?"class=active" :"")><a>فارسی</a></li>
+                    <li @(CultureHelper.GetCurrentCulture()=="en"?"class=active" :"")><a>انگلیسی</a></li>
+                    <li @(CultureHelper.GetCurrentCulture()=="ar"?"class=active" :"")><a>عربی</a></li>
+                </ul>
+
+            </div>
+            <div class="medium-3 columns InnerTop ">
+                <div class="Phone">05133411662</div>
+            </div>
+
+        </div>
+
+        <div class="medium-16 columns topcontiner">
+            <div class="logo medium-2 columns">
+                <div>  <img src="/content/image/logo.png" /> </div>
+            </div>
+            <div class="Titel medium-3 columns">
+                <p> موسسه خیریه <span> علوی مشهد</span></p>
+                <p>کمک به ایتام و مستمندان</p>
+            </div>
+            <div class="medium-7  columns talk">
+                <h5> : امام علی  علیه السلام</h5>
+                <p>با مردم آنگونه معاشرت كنيد، كه اگر مرديد بر شما اشك ريزند، و اگر زنده مانديد، با اشتياق سوي شما آيند</p>
+            </div>
+
+            <div class="login medium-4 columns">
+                @if (User.Identity.IsAuthenticated)
+                {
+                      <div class="topuser">
+                    <a>
+                        <span>کاربر :@User.Identity.Name</span>
+                    </a>
+                </div>
+                <div class="topregister">
+                    <a href="##">تغییر کلمه عبور</a>
+                    <a href="#"> پنل کاربری </a>
+                </div>
+                }
+                else { 
+                <div class="topuser">
+                    <a href="@Url.Action("Login","Account")">
+                        <span>ورود کاربران</span>
+                    </a>
+                </div>
+                <div class="topregister">
+                    <a href="##">ثبت نام کنید</a>
+                    <a href="#"> فراموشی کلمه عبور </a>
+                </div>
+                }
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="body row" style="margin-top:128px">
+        @RenderBody()
+
+    </div>
+
+    <div class="footerblock row">
+        <div class="row footer">
+            <div class="medium-4 columns footerlink">
+                <h6>خیریه  <span>علوی مشهد</span> </h6>
+                <p>
+                    خیریه علوی مشهد در سال 1340 توسط چندی از خیرین مشهدی جهت کمک و یارای نیازمندان در تحصیل احداث گردید
+                </p>
+
+            </div>
+            <div class="medium-4 columns footerlink">
+                <h6>ارتباط بیشتر</h6>
+                <ul>
+                    <li><a> صندوق صدقات</a></li>
+                    <li><a>زکات</a></li>
+                    <li><a>خمس</a></li>
+                    <li><a>هدیه</a></li>
+                </ul>
+            </div>
+            <div class="medium-4 columns footerlink">
+                <h6>دسترسی سریع</h6>
+                <ul>
+                    <li><a>صفحه اصلی</a></li>
+                    <li><a>درباره ما</a></li>
+                    <li><a>تازه ترین خبر ها</a></li>
+                    <li><a> گالری</a></li>
+                </ul>
+            </div>
+
+            <div class="medium-4 columns footerlink">
+                <h6>لینک های مفید</h6>
+                <ul>
+                    <li><a>خیریه توحید</a></li>
+                    <li><a>دانشگاه فردوسی</a></li>
+                    <li><a>سایت رهبری</a></li>
+                    <li><a>وزارت علوم</a></li>
+                </ul>
+            </div>
+
+            <div class="medium-16 columns footercontiner">
+                <div class="medium-4 columns" style="min-height:100px">
+
+                </div>
+                <div class="medium-6 columns footerlink">
+                    <h6>خبرنامه</h6>
+                    <form action="/tehran/subscribe" class="ft-subscribe-form" id="SubscriptionIndexForm" method="post" accept-charset="utf-8">
+                        <div style="display:none;"><input type="hidden" name="_method" value="POST"><input type="hidden" name="data[_Token][key]" value="1d811cff94668cd0b12d7a46c4929b5838afe3d7" id="Token1751065321"></div>
+                        <input name="data[Subscription][email]" type="text" placeholder="" class="footerinput" maxlength="255" id="SubscriptionEmail"><input type="hidden" name="data[Subscription][city_id]" value="42546" id="SubscriptionCityId"><div class="submit"><input class="submitsub" type="submit" value="اشتراک"></div>
+                        <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="3c525dd1ff8cac631ea7d142b3682b103758d3d3%3ASubscription.city_id" id="TokenFields1509735081"></div>
+                    </form>
+                </div>
+                <div class="medium-6 columns footerlink">
+                    <h6>اشتراک</h6>
+                    <div class=" medium-4 columns ">
+                        <a><img src="/content/icon/Facebook.png" /></a>
+                        
+                    </div>
+                    <div class=" medium-4 columns ">
+                        <a><img src="/content/icon/Twitter-2.png" /></a>
+                    </div>
+                    <div class=" medium-4 columns ">
+                        <a><img src="/content/icon/Linked-In.png" /></a>
+                        
+                    </div>
+                    <div class=" medium-4 columns ">
+                        <a><img src="/content/icon/Google.png" /></a>
+                    </div>
+                   
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="copyright row">
+
+            <div class="pull-right low">کلیه حقوق مادی و معنوی این سایت محفوظ می باشد</div>
+            <div class="pull-left phone"> (0513)2715568</div>
+        </div>
+    </div>
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
+

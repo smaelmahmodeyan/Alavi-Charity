@@ -1,0 +1,113 @@
+﻿@font-face {
+    font-family: 'Yekan';
+    src: url('/Areas/AdminPanel/Content/fonts/YekanWeb-Regular.eot');
+    src: url('/Areas/AdminPanel/Content/fonts/YekanWeb-Regular.eot?#iefix') format('embedded-opentype'), url('/Areas/AdminPanel/Content/fonts/YekanWeb-Regular.woff') format('woff'), url('/Areas/AdminPanel/Content/fonts/YekanWeb-Regular.ttf') format('truetype'), url('/Areas/AdminPanel/Content/fonts/YekanWeb-Regular.svg#@glyphicons_halflingsregular') format('svg');
+}
+
+body {
+    font-family: Yekan !important;
+    direction: rtl;
+}
+
+.main-sidebar {
+    left: auto;
+    right: 0px;
+}
+
+.main-header .logo {
+    float: right;
+}
+
+.main-header > .navbar {
+    margin-right: 230px;
+    margin-left: auto;
+}
+
+.main-header .sidebar-toggle {
+    float: right;
+}
+
+.navbar-nav {
+    float: right;
+}
+
+.nav {
+    padding-right: 0px;
+    padding-left: auto;
+}
+
+.navbar-nav > li {
+    float: right;
+}
+
+.main-header .navbar-custom-menu, .main-header .navbar-right {
+    float: left;
+}
+
+.sidebar-mini.sidebar-collapse .main-header .navbar {
+    margin-right: 50px;
+    margin-left: auto;
+}
+
+.sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .right-side, .sidebar-mini.sidebar-collapse .main-footer {
+    margin-right: 50px !important;
+    margin-left: auto !important;
+    z-index: 840;
+}
+
+.content-wrapper, .right-side, .main-footer {
+    transition: transform 0.3s ease-in-out 0s, margin 0.3s ease-in-out 0s;
+    margin-right: 230px;
+    margin-left: auto;
+    z-index: 820;
+}
+
+.user-panel > .info {
+    padding: 5px 15px 5px 5px;
+    line-height: 1;
+    position: absolute;
+    right: 55px;
+}
+
+.skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a {
+    border-right-color: #3C8DBC;
+    border-left-color: #333 !Important;
+}
+
+.skin-blue .sidebar-menu > li > a {
+    border-right: 5px solid transparent;
+}
+
+.sidebar-menu > li > a {
+    padding: 12px 15px 12px 5px;
+}
+
+.sidebar-menu li > a > .pull-right {
+    left: 10px;
+    right: auto;
+}
+
+.sidebar-menu .treeview-menu > li > a {
+    padding: 5px 15px 5px 5px;
+    font-size: 13px;
+}
+
+.content-header > .breadcrumb {
+    float: left;
+    left: 10px;
+    right: auto;
+}
+
+.control-sidebar.control-sidebar-open, .control-sidebar.control-sidebar-open + .control-sidebar-bg {
+    left: 0px;
+    right: auto;
+}
+
+.navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+    position: absolute;
+    left: 0px;
+    right: auto;
+}
+.sorting{
+    text-align:right !important;
+}

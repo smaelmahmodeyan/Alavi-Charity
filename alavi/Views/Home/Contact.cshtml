@@ -1,0 +1,138 @@
+﻿@using Jmelosegui.Mvc.Googlemap
+@using System.Globalization
+@model alavi.Models.Contact
+
+<div class="row" style="padding:30px">
+    <div class="medium-4 columns" style="border-radius:2px;">
+        <div class="medium-16 columns" style="  float: right">
+            <div>
+                <ul class="menuright">
+                    <li class="active home"> <a href="/fa/home/index">خانه</a></li>
+                    <li class="  blog"><a href="/fa/home/aboutus">ما که هستیم</a></li>
+                    <li class="Star"><a href="/fa/home/Activities">چه کار می کنیم</a></li>
+                    <li class="Star"><a href="/fa/home/helpus">چگونه به ما کمک کنید</a></li>
+                    <li class=" Star"><a href="/fa/home/Contact">چگونه با ما در ارتباط باشید</a></li>
+                    <li class="Star"><a>ارتباط مستقیم با مدیر عامل</a></li>
+                    <li class="Star"><a href="/fa/account/register">عضویت </a></li>
+                   
+                </ul>
+            </div>
+        </div>
+
+        <div class="medium-16 columns" style="margin-top:20px;text-align:right">
+            <div style="padding: 2px 0; border-bottom: 1px solid #e6e6e6; margin-bottom: 5px;position: relative;font-size: 14px;">
+                تگ مطالب
+            </div>
+            <div>
+                <ul style="list-style:none;display:table;width:100%;margin-top:0;padding-left:0;">
+                    <li style="float: right;width: 50%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+                    <li style="float: right;width: 50%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+                    <li style="float: right;width: 50%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+                    <li style="float: right;width: 50%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="medium-16 columns" style="margin-top:20px;text-align:right">
+            <div style="padding: 2px 0; border-bottom: 1px solid #e6e6e6; margin-bottom: 5px;position: relative;font-size: 14px;">
+                حامی شوید
+            </div>
+            <div>
+                <ul style="list-style:none;display:table;width:100%;margin-top:0;padding-left:0;">
+                    <li><a style="display: block;position: relative;"></a></li>
+
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="medium-16 columns" style="margin-top:20px;text-align:right">
+            <div style="padding: 2px 0; border-bottom: 1px solid #e6e6e6; margin-bottom: 5px;position: relative;font-size: 14px;">
+                دوستانمان
+            </div>
+            <div>
+                <ul style="list-style:none;display:table;width:100%;margin-top:0;padding-left:0;">
+                    <li style="float: right;width: 100%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+                    <li style="float: right;width: 100%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+                    <li style="float: right;width: 100%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+                    <li style="float: right;width: 100%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="medium-12 columns">
+        <div class="medium-16 columns" style="min-height:850px;border-radius:5px;border:1px solid #e0e0e0;background:#fff;padding:0">
+            <div><h3 style="padding:10px;text-align:right;padding-top:0;margin-top:10px;margin-bottom:0">تماس با ما</h3></div>
+            <div style="height:250px">
+                @Html.GoogleMap().Name("map").Culture(CultureInfo.GetCultureInfo("fa")).Latitude(36.2621015).Longitude(59.5994894).Zoom(16)
+
+            </div>
+
+
+           
+            <div class="medium-16 columns">
+                <form method="post" action="@Url.Action("Contact","Home")">
+
+
+                    <h4 style="text-align:right"> فرم تماس با ما</h4>
+                    <div class="row">
+                        <div class="medium-4 columns">نام شما</div>
+                        <div class="medium-10 columns">
+                            @Html.TextBoxFor(rec => rec.Name, new { style = "width:100%;color: #404040;background-color: #f2f2f2;background-image: none;border: 1px solid #d9d9d9;text-align:right; border-radius:2px;font-size:13px;font-family:Yekan" })
+                        </div>
+                        <div class="medium-2 columns"></div>
+                    
+                        </div>
+                    <div class="row" style=" margin-top:10px">
+                        <div class="medium-4 columns">ایمیل شما</div>
+                        <div class="medium-10 columns">
+                            @Html.TextBoxFor(rec => rec.Email, new { type = "email", style = "width:100%;color: #404040;background-color: #f2f2f2;background-image: none;border: 1px solid #d9d9d9;text-align:right; border-radius:2px;font-size:13px;font-family:Yekan" })
+                        
+                         </div>
+                        <div class="medium-2 columns"></div>
+                    </div>
+                    <div class="row" style=" margin-top:10px">
+                        <div class="medium-4 columns">پیغام</div>
+                        <div class="medium-10 columns">
+                            @Html.TextAreaFor(rec => rec.Text, new { style="width:100%;color: #404040;background-color: #f2f2f2;background-image: none;border: 1px solid #d9d9d9;text-align:right; border-radius:2px;font-size:13px;font-family:Yekan;", cols="30" ,rows="6"})
+                         
+                         </div>
+                        <div class="medium-2 columns"></div>
+                    </div>
+
+                    <div class="row" style=" margin-top:10px;">
+                        <div class="medium-4 columns"></div>
+                        <div class="medium-10 columns">
+                            <button type="reset" class="submitsub" style="height:30px;font-size:13px;margin-left:10px">پاک کردن فرم</button>
+                            <button type="submit" class="submitsub" style="height:30px;font-size:13px;margin-left:10px"> ارسال</button>
+
+                        </div>
+                        <div class="medium-2 columns"></div>
+
+
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="medium-16 columns" style="text-align:right;font-size:14px;">
+                <h4 style="text-align:right"> ارتباط بیشتر</h4>
+                آدرس: دفتر مرکزی مؤسسه: امام رضا (ع) 55. پلاک 5
+                <br />
+                روابط عمومی: 5113411662 &nbsp; &nbsp;   فکس: 5118521882
+                <br />
+                 شماره تماس های ما: 8591631- 3411662-3448245
+
+            </div>
+
+        </div>
+    </div>
+</div>
+@(Html.GoogleMap().ScriptRegistrar())

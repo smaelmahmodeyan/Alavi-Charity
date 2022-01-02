@@ -1,0 +1,85 @@
+﻿@using alavi.Models
+@model News
+
+
+<div class="row" style="padding:30px">
+    <div class="medium-4 columns" style="border-radius:2px;">
+        <div class="medium-16 columns" style="  float: right">
+            <div>
+                <ul class="menuright">
+                    <li class="active home"> <a href="/fa/home/index">خانه</a></li>
+                    <li class="  blog"><a href="/fa/home/aboutus">ما که هستیم</a></li>
+                    <li class="Star"><a href="/fa/home/Activities">چه کار می کنیم</a></li>
+                    <li class=" Star"><a href="/fa/home/helpus">چگونه به ما کمک کنید</a></li>
+                    <li class=" Star"><a href="/fa/home/Contact">چگونه با ما در ارتباط باشید</a></li>
+                    <li class="Star"><a>ارتباط مستقیم با مدیر عامل</a></li>
+                    <li class="Star"><a href="/fa/account/register">عضویت </a></li>
+                    <li class="Contact"><a href="/fa/home/Contact">تماس با ما</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="medium-16 columns" style="margin-top:20px;text-align:right">
+            <div style="padding: 2px 0; border-bottom: 1px solid #e6e6e6; margin-bottom: 5px;position: relative;font-size: 14px;">
+                تگ مطالب
+            </div>
+            <div>
+                <ul style="list-style:none;display:table;width:100%;margin-top:0;padding-left:0;">
+                    <li style="float: right;width: 50%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+                    <li style="float: right;width: 50%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+                    <li style="float: right;width: 50%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+                    <li style="float: right;width: 50%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="medium-16 columns" style="margin-top:20px;text-align:right">
+            <div style="padding: 2px 0; border-bottom: 1px solid #e6e6e6; margin-bottom: 5px;position: relative;font-size: 14px;">
+                حامی شوید
+            </div>
+            <div>
+                <ul style="list-style:none;width:100%;margin-top:0;padding-left:0;">
+                    <li><a style="display: block;position: relative;"><img src="~/Content/Image/2_4115.jpg" style="border:1px solid #e0e0e0;padding:3px;" /></a></li>
+
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="medium-16 columns" style="margin-top:20px;text-align:right">
+            <div style="padding: 2px 0; border-bottom: 1px solid #e6e6e6; margin-bottom: 5px;position: relative;font-size: 14px;">
+                دوستانمان
+            </div>
+            <div>
+                <ul style="list-style:none;display:table;width:100%;margin-top:0;padding-left:0;">
+                    <li style="float: right;width: 100%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+                    <li style="float: right;width: 100%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+                    <li style="float: right;width: 100%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+                    <li style="float: right;width: 100%;font-size: 13px;"><a style="display: block;width: 100%;height: 100%;position: relative;border: 1px solid #e6e6e6;text-align: center;background: white;color: #4d4d4d;-webkit-transition-duration: 0.2s;transition-duration: 0.2s;">سیب</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="medium-12 columns">
+        <div class="medium-16 columns forms">
+            <div><h3>@Model.Title</h3></div>
+            <div class="contents" >
+
+              @Html.Raw(Model.FullNews)
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+

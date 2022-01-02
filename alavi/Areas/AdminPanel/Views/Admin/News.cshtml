@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_Master.cshtml";
+}
+
+
+<section class="content">
+    <div class="row">
+        <a class="btn  btn-primary" href="/adminpanel/admin/addnews"> افزودن خبر</a>
+        <div class="col-xs-12">
+          
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">لیست خبر ها</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <table id="tblNews" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>شماره</th>
+                                <th>عنوان خبر</th>
+                                <th>تاریخ</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+@section Scripts{
+
+    <script>
+
+        $(document).ready(function () {
+            var oTable = $('#tblNews').dataTable({
+                "bServerSide": true,
+                "sAjaxSource": "/api/news/GetlistNews/",
+                "bProcessing": true,
+                "columns": [
+            { "data": "Id", "bSearchable": false },
+            { "data": "title" },
+            { "data": "date" }
+          
+
+                ]
+            });
+        })
+
+
+
+    </script>
+}
+
+
+
+

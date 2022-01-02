@@ -1,0 +1,71 @@
+﻿@model alavi.Models.News
+@{
+    ViewBag.Title = "AddNews";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_Master.cshtml";
+}
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">افزودن خبر</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <form id="frmadd" action="@Url.Action("Addnews")" method="post">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">عنوان خبر</label>
+
+                            @Html.TextBoxFor(rec => rec.Title, new { placeholder = "عنوان خبر", @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">توضیح کوتاه</label>
+                            @Html.TextAreaFor(rec => rec.shortNews, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">عکس</label>
+                            <input class="form-control" id="img" type="file">
+                            @Html.HiddenFor(rec=>rec.Image)
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">شرح خبر</label>
+                            @Html.TextAreaFor(rec => rec.FullNews, new { id = "Fullnews", @class = "form-control" })
+
+                        </div>
+
+                        <div class="form-group">
+                            <label></label>
+                            <button type="button" id="btnAddNews" class="btn btn-block btn-default">افزودن خبر</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<script src="~/Areas/AdminPanel/Them/plugins/ckeditor/ckeditor.js"></script>
+@section Scripts{
+
+    <script>
+        CKEDITOR.replace('Fullnews');
+        var filename = "";
+        $("#btnAddNews").on("click", function () {
+
+            filename = $("#img").get(0).files[0].name;
+            fileUplaod($("#img").get(0), "/adminpanel/admin/postNewsFile", successUpload);
+        });
+        function successUpload(evt) {
+
+            if (evt.target.status == 200) {
+                $("#Image").val(filename);
+                $("#frmadd").submit();
+            }
+            else {
+                alert("خطا در بارگذاری عکس");
+            }
+        }
+
+    </script>
+}

@@ -1,0 +1,232 @@
+﻿@using alavi.ViewModel
+@model HomeViweModel
+
+<div class="row" style="padding:30px">
+    <div class="medium-4 columns" style="border-radius:2px;">
+        <div style="  width:90%; float: right">
+            <ul class="menuright">
+                <li class="active home"> <a href="/fa/home/index">خانه</a></li>
+                <li class="blog"><a href="/fa/home/aboutus">ما که هستیم</a></li>
+                <li class="Star"><a href="/fa/home/Activities">چه کار می کنیم</a></li>
+                <li class="Star"><a href="/fa/home/helpus">چگونه به ما کمک کنید</a></li>
+                <li class="Star"><a href="/fa/home/Contact">چگونه با ما در ارتباط باشید</a></li>
+                <li class="Star"><a>ارتباط مستقیم با مدیر عامل</a></li>
+                <li class="Star"><a href="/fa/account/register">عضویت </a></li>
+           
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="medium-12 columns" style="height:313px;">
+
+        <div id="sliderFrame">
+            <div id="slider">
+                <img src="~/Content/Image/1.jpg" />
+                <img src="~/Content/Image/2.jpg"  alt="خیریه علوی مشهد"/>
+                <img src="~/Content/Image/3.jpg" alt="خیریه علوی مشهد" />
+                <img src="~/Content/Image/4.jpg" alt="کمک به نیازمندان و مستمندان" />
+              
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<div class="row">
+    <section class="medium-16 columns price">
+        <div class="pricecontiner">
+            <!-- PRICING-TABLE CONTAINER -->
+            <div class="medium-4 columns pricetable green">
+                <p>
+                    <span><img src="/content/icon/620-84.png" /></span>طرح حمایتی ویژه<br /> برای خانواده
+                </p>
+
+            </div>
+            <div class="medium-4 columns pricetable orange">
+                <p>
+                    <span><img src="/content/icon/4060-84.png" /></span>  طرح کمک یاری <br /> ویژه  محصلین
+                </p>
+            </div>
+            <div class="medium-4 columns pricetable blue">
+                <p>
+                    <span><img src="/content/icon/57886-84.png" /></span>   طرح دانش پروری <br />ویژه مستمندان
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="medium-16 columns news">
+        <div class="title medium-16 columns">
+            <h4>
+                <a>حامی شوید</a>
+            </h4>
+            <div class="titlebar-meta">
+                <a href="@Url.Action("sponsor")" class="see-all another">مشاهده کامل لیست <span>»</span></a>
+
+            </div>
+        </div>
+        <div id="Suply" class="medium-12 columns  owl-carousel">
+
+
+
+
+
+
+     
+
+            @{foreach (var item in Model.Childern) { 
+
+            <div class="sponsor">
+                <div>
+                    <h5>@item.FullName</h5>
+                    <p>@item.Education</p>
+                    <div class="avatar">
+                        <img src="@(item.Image!=""?item.Image:"/content/image/avatar.png")"  />
+                    </div>
+                    <div class="flow"><span>@item.Avarge</span>@Html.Raw("معدل")</div>
+                    <div class="hami">
+                        <a>
+                            <span>
+                                <i></i>حامی شوید
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            }
+                    }
+         
+        </div>
+
+    </section>
+
+    <section class="medium-16 columns msg">
+        <div class="imagemsage">
+            <a><img src="/content/image/h.jpg" /></a>
+            <p style="font-family: BElham;position: absolute;top: 83px;right: 418px;z-index: 9;font-size: 28px;">خیریه علوی مشهد</p>
+            <p style="position: absolute; top: 139px; right: 390px; z-index: 9; font-size: 19px; font-weight: bold;">کمک به نیازمندان و مستمندان</p>
+        </div>
+
+    </section>
+    <section class="medium-16 columns news">
+        <div class="title medium-16 columns">
+            <h4>
+                <a>تازه ترین خبر ها</a>
+            </h4>
+            <div class="titlebar-meta">
+                <a href="@Url.Action("News")" class="see-all another">مشاهده همه خبر ها <span>»</span></a>
+            </div>
+        </div>
+        <div id="NewsContiner" class="medium-16 columns body owl-carousel">
+
+            @{ foreach(var news in Model.News){
+               
+               <article>
+                <div class="inner">
+                    <div class="image"><a><img src="@(news.Image != "" ? "/image/news/"+news.Image : "/content/image/image-slider-5.jpg") " /></a></div>
+                    <div class="head">
+                        <h2><a> @news.Title</a></h2>
+                    </div>
+                    <div class="description">
+                        <p>@news.shortNews</p>
+                        <div class="buttomcontiner">
+                            <div class="readmore">
+                                <div class="innermore"><a href="@Url.Action("Post", new {id=news.Id })">بیشتر بخوانید</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+               
+               }}
+            
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </section>
+
+    <section class="medium-16 columns" style="margin-bottom:15px;">
+
+        <div class="medium-4 columns">
+            <div style="padding:10px;height:307px;background:#fff;border-radius:0px;width:100%;text-align:center;  box-shadow: 1px 1px 2px 0px rgb(208, 208, 208);border-color: rgb(228, 228, 228) rgb(190, 190, 189) rgb(190, 190, 189) rgb(228, 228, 228);">
+              
+                <img src="~/Content/Image/charity.png" alt="Chat" class="slab-image" style="max-height: 145px;">
+                <h3 style="font-weight: 500; font-style: normal; color: #222222; text-rendering: optimizeLegibility;margin:0px">صندوق صدقات</h3>
+                <p style="margin:0;font-size:15px;margin-bottom: 50px;">پاسخ گویی در کمترین زمان</p>
+                <a style="  color: #ffffff;background-color: #1abc9c;box-shadow: 0 1px 0 rgba(255, 255, 255, 0) inset;transition: background-color 300ms ease-out;  font-size: 15px;font-weight: normal;line-height: 1.4;padding: 7px 70px;" href="#">تماس </a>
+
+            </div>
+        </div>
+        <div class="medium-4 columns">
+            <div style="padding:10px;height:307px;background:#fff;border-radius:0px;width:100%;text-align:center;  box-shadow: 1px 1px 2px 0px rgb(208, 208, 208);border-color: rgb(228, 228, 228) rgb(190, 190, 189) rgb(190, 190, 189) rgb(228, 228, 228);">
+             
+                <img src="~/Content/Image/Charity_02-250x250.jpg" alt="Chat" style="max-height: 145px;" class="slab-image">
+                <h3 style="font-weight: 500; font-style: normal; color: #222222; text-rendering: optimizeLegibility;margin:0px">کمک اهدایی </h3>
+                <p style="margin:0;font-size:15px;margin-bottom: 50px;">برای هدیه به محصلین </p>
+                <a style="  color: #ffffff;background-color: #1abc9c;box-shadow: 0 1px 0 rgba(255, 255, 255, 0) inset;transition: background-color 300ms ease-out;  font-size: 15px;font-weight: normal;line-height: 1.4;padding: 7px 70px;" href="#">دریافت </a>
+
+            </div>
+        </div>
+        <div class="medium-4 columns">
+            <div style="padding:10px;height:307px;background:#fff;border-radius:0px;width:100%;text-align:center;  box-shadow: 1px 1px 2px 0px rgb(208, 208, 208);border-color: rgb(228, 228, 228) rgb(190, 190, 189) rgb(190, 190, 189) rgb(228, 228, 228);">
+
+                <img src="/content/image/ico_read.png" alt="Chat" class="slab-image">
+                <h3 style="font-weight: 500; font-style: normal; color: #222222; text-rendering: optimizeLegibility;margin:0px">کمک اهدایی به صندوق</h3>
+                <p style="margin:0;font-size:15px;margin-bottom: 50px;">برای اعیاد و مناسبت های خاص</p>
+                <a style="  color: #ffffff;background-color: #1abc9c;box-shadow: 0 1px 0 rgba(255, 255, 255, 0) inset;transition: background-color 300ms ease-out;  font-size: 15px;font-weight: normal;line-height: 1.4;padding: 7px 70px;" href="#">اهدا کن</a>
+
+            </div>
+        </div>
+        <div class="medium-4 columns">
+            <div style="padding:10px;height:307px;background:#fff;border-radius:0px;width:100%;text-align:center;  box-shadow: 1px 1px 2px 0px rgb(208, 208, 208);border-color: rgb(228, 228, 228) rgb(190, 190, 189) rgb(190, 190, 189) rgb(228, 228, 228);">
+
+                <img src="/content/image/ico_gift.png" alt="Chat" class="slab-image">
+                <h3 style="font-weight: 500; font-style: normal; color: #222222; text-rendering: optimizeLegibility;margin:0px">خمس و زکات</h3>
+                <p style="margin:0;font-size:15px;margin-bottom: 50px;">برای کمک به نیازمندان</p>
+                <a style="  color: #ffffff;background-color: #1abc9c;box-shadow: 0 1px 0 rgba(255, 255, 255, 0) inset;transition: background-color 300ms ease-out;  font-size: 15px;font-weight: normal;line-height: 1.4;padding: 7px 70px;" href="#">یاری نما</a>
+
+            </div>
+        </div>
+
+    </section>
+
+
+</div>
+
+
+
+
+
+<script>
+        $("#NewsContiner").owlCarousel({
+            autoPlay: 4000, //Set AutoPlay to 3 seconds
+            items : 3,
+            itemsDesktop: [1199, 3]
+
+
+
+        });
+        $("#Suply").owlCarousel({
+            autoPlay: 5000, //Set AutoPlay to 3 seconds
+            items: 4,
+            itemsDesktop: [1199, 4]
+
+
+
+        });
+
+</script>

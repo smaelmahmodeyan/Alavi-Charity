@@ -1,0 +1,88 @@
+﻿@model alavi.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+
+
+
+<div class="row">
+    <br />
+    <div class="medium-1 columns" style="min-height:220px"></div>
+    <div class="page medium-14 columns" style="background-color:#fff">
+        <div class="title">
+            <h2>عضویت در خیریه علوی مشهد</h2>
+        </div><!--/./ Title -->
+        <div class="content">
+            @using (Html.BeginForm("Register", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true)
+
+
+                <div class="row">
+                    <label for="email" class="medium-3 columns control-label"> :نام کاربری </label>
+                    <div class="control-input medium-10 columns" style="margin:10px">
+                        @Html.TextBoxFor(rec => rec.UserName, new { style = "width: 100%; text-align: right; color: #404040; background-color: #f2f2f2; background-image: none; border: 1px solid #d9d9d9; border-radius: 2px; font-size: 13px; font-family: Yekan" })
+                      
+
+                    </div>
+                    <div class="medium-3 columns"></div>
+                </div>
+
+
+                <div class="row">
+                    <label for="email" class="medium-3 columns control-label">:کلمه عبور </label>
+                    <div class="control-input  medium-10 columns" style="margin:10px">
+                        @Html.PasswordFor(rec => rec.Password, new { style = "width: 100%; text-align: right; color: #404040; background-color: #f2f2f2; background-image: none; border: 1px solid #d9d9d9; border-radius: 2px; font-size: 13px; font-family: Yekan" })
+                      
+
+                    </div>
+                    <div class="medium-3 columns"></div>
+                </div>
+                
+                
+                <div class="row">
+                    <label for="email" class="medium-3 columns control-label">: تکرار کلمه عبور </label>
+                    <div class="control-input  medium-10 columns" style="margin:10px">
+                        @Html.PasswordFor(rec => rec.ConfirmPassword, new { style = "width: 100%; text-align: right; color: #404040; background-color: #f2f2f2; background-image: none; border: 1px solid #d9d9d9; border-radius: 2px; font-size: 13px; font-family: Yekan" })
+                      
+
+                    </div>
+                    <div class="medium-3 columns"></div>
+                </div>
+
+             
+
+            
+
+                <div class="form-group">
+                    <label for="email" class="control-label medium-3 columns"></label>
+                    <div class="control-input">
+                        <button type="submit" class="submitsub" style="height:30px;font-size:13px;margin-right:20px;float:right"> عضویت</button>
+                    </div>
+                </div>
+
+
+            }
+
+
+        </div><!--/./ content -->
+    </div><!--/./ page -->
+    <div class="medium-1 columns" style="min-height:220px"></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
